@@ -26,24 +26,23 @@ The app will allow users to create meetings, and the availability of each invite
 - [ ] As a user, I'd like to set my availabilty as recurring.
 - [ ] As a user, I'd like to edit & remove recurring availability.
 - [ ] As a user, I'd like to create meetings.
-- [ ] As a user, I'd like to create, edit and delete the meeting subject.
-- [ ] As a user, I'd like to create, edit and delete meeting information.
-- [ ] As a user, I'd like to invite attendees to a meeting I've created.
-- [ ] As a user, I'd like to invite attendees from an e-mail address or username.
-- [ ] As a user, I'd like to add additional attendees to an existing meeting.
-- [ ] As a user, I'd like to remove existing attendees on an existing meeting.
-- [ ] As a user, I'd like to view availability of invited attendees.
-- [ ] As a user, I'd like to edit existing meetings.
-- [ ] As a user, I'd like to remove existing meetings.
 - [ ] As a user, I'd like to be notified when I am invited to a meeting.
 - [ ] As a user, I'd like to see upcoming meetings in ascending order, starting with the closest.
 - [ ] As a user, I'd like to see previous meetings in descending order, starting with the most recent.
 - [ ] As a user, I'd like for my availability to be modified when a meeting sets an official time.
 
 #### Admin (of a meeting)
-- [ ] As an admin, I'd like to officially set the meeting time for a meeting.
+- [ ] As an admin, I'd like to set the meeting time for a meeting.
 - [ ] As an admin, I'd like to notify team members by email of the meeting time for a meeting.
-- [ ] As an admin, I'd like to officially set the meeting time for a meeting.
+- [ ] As an admin, I'd like to create, edit and delete the meeting subject.
+- [ ] As an admin, I'd like to create, edit and delete meeting information.
+- [ ] As an admin, I'd like to invite attendees to a meeting I've created.
+- [ ] As an admin, I'd like to invite attendees from an e-mail address or username.
+- [ ] As an admin, I'd like to add additional attendees to an existing meeting.
+- [ ] As an admin, I'd like to remove existing attendees on an existing meeting.
+- [ ] As an admin, I'd like to view availability of invited attendees.
+- [ ] As an admin, I'd like to edit existing meetings.
+- [ ] As an admin, I'd like to remove existing meetings.
 
 #### Developer
 
@@ -124,7 +123,55 @@ Please follow these guidelines when submitting your pull request:
 
 ### Code Conventions
 
-TBD.
+#### Indentatin
+
+Spaces vs Tabs
+
+#### Quotes
+
+Single vs Double
+
+#### Operators
+
+Spacing
+
+Equality 
+
+Ternary
+
+#### Parentheses Spacing
+
+Spaces vs No Spaces
+
+#### Object Literal Format
+
+#### Comments
+
+Single-Line
+
+Multi-Line
+
+#### Declarations
+
+Variables
+
+Functions
+
+Naming
+
+#### Strict Mode
+
+#### Statements
+
+if
+
+for
+
+while
+
+do
+
+#### White Space
 
 ## License
 
