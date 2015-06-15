@@ -5,6 +5,8 @@
 ## Overview
 This application is built to help members of the [Free Code Camp](http://www.freecodecamp.com) community coordinate schedules across multiple time zones.
 
+The app will allow users to create meetings, and the availability of each invitee (relevant to their own time zone) to the meeting will be compared to find the best time to meet. The app does the work of converting between time zones for the user, making finding the best time easier, and allowing users to add availability without converting to a new time zone every time.
+
 #### Current Team
 
 - Blake Johnston ([@johnstonbl01](https://twitter.com/johnstonbl01)) - Project Lead
@@ -35,7 +37,13 @@ This application is built to help members of the [Free Code Camp](http://www.fre
 - [ ] As a user, I'd like to remove existing meetings.
 - [ ] As a user, I'd like to be notified when I am invited to a meeting.
 - [ ] As a user, I'd like to see upcoming meetings in ascending order, starting with the closest.
-- [ ] As a users, I'd like to see previous meetings in descending order, starting with the most recent.
+- [ ] As a user, I'd like to see previous meetings in descending order, starting with the most recent.
+- [ ] As a user, I'd like for my availability to be modified when a meeting sets an official time.
+
+#### Admin (of a meeting)
+- [ ] As an admin, I'd like to officially set the meeting time for a meeting.
+- [ ] As an admin, I'd like to notify team members by email of the meeting time for a meeting.
+- [ ] As an admin, I'd like to officially set the meeting time for a meeting.
 
 #### Developer
 
@@ -44,7 +52,7 @@ This application is built to help members of the [Free Code Camp](http://www.fre
 
 ## Contribution Guidelines
 
-This project is open source and provides multiple ways to make meaningful contributions. This application couldn't exist without the help of many contributor, and we want you to feel like you can contribute and make a difference.
+This project is open source and provides multiple ways to make meaningful contributions. This application couldn't exist without the help of many contributors, and we want you to feel like you can help out and make a difference.
 
 ### Ways to Contribute
 
