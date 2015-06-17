@@ -1,5 +1,7 @@
 'use strict';
 
+var test = test;
+
 var _ = require('lodash');
 var Meeting = require('./meeting.model');
 
