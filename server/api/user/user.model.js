@@ -18,7 +18,27 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
+  github: {},
+  contact: [{'type' : String, 'info': String}], //e.g. {type: email, info: sillywalks@ministryofwalks.uk}
+  rolodex: [{type: Schema.Types.ObjectID, ref: 'User'}],
+  // possible future fxnality for 'teams' array?
+  availability: {
+    'ongoing' : [{
+      'dayOfWeek' : Number,
+      'startTime' : Date,
+      'endTime' : Date
+    }],
+    'unique' : [{
+      'date' : Date,
+      'startTime' : Date,
+      'endTime' : Date
+    }]
+  },
+  meetings: {
+    'invitations' : [{type: Schema.Types.ObjectID, ref: 'Meeting'}],
+    'confirmed' : [{type: Schema.Types.ObjectID, ref: 'Meeting'}]
+  }
+
 });
 
 /**
