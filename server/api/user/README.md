@@ -10,6 +10,8 @@ These are pretty much handled automatically by Passport, and there is nothing we
 
 **Never** send the user's password or login data to the client. Always return a scrubbed user object (i.e. only the relevant fields for meetings, etc) from the server.
 
+Also note that an 'admin' role on the User object is *not* related to an admin role related to a meeting. The 'admin' role for a User object gives the ability to edit things inside the app. No users will have this role except the creators of the app. Admins of meetings are simply listed in a separate array for the meeting, their User objects are not modified.
+
 ## Personal data
 
 Each user has a name, some contact information, and a rolodex of other Users they know:

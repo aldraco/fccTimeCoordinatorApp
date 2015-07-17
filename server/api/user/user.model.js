@@ -20,7 +20,7 @@ var UserSchema = new Schema({
   google: {},
   github: {},
   contact: [{'type' : String, 'info': String}], //e.g. {type: email, info: sillywalks@ministryofwalks.uk}
-  rolodex: [{type: Schema.Types.ObjectID, ref: 'User'}],
+  rolodex: [{type: Schema.Types.ObjectId, ref: 'User'}],
   // possible future fxnality for 'teams' array?
   availability: {
     'ongoing' : [{
@@ -35,8 +35,8 @@ var UserSchema = new Schema({
     }]
   },
   meetings: {
-    'invitations' : [{type: Schema.Types.ObjectID, ref: 'Meeting'}],
-    'confirmed' : [{type: Schema.Types.ObjectID, ref: 'Meeting'}]
+    'invitations' : [{type: Schema.Types.ObjectId, ref: 'Meeting'}],
+    'confirmed' : [{type: Schema.Types.ObjectId, ref: 'Meeting'}]
   }
 
 });
