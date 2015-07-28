@@ -127,6 +127,21 @@ UserSchema
       next();
   });
 
+  // hook to delete old availability
+  // default time is last week's unique avail
+UserSchema
+  .pre('save', function(next) {
+    // check for old availability in user.availability.unique, which is an array of objects
+    // filter out the dates that are older than today
+    var today = Date.now();
+    var avail = this.availability.unique;
+    this.availability.unique = avail.filter(function(item) {
+      return item.date > today;
+    });
+    next();
+  });
+
+
 /**
  * Methods
  */

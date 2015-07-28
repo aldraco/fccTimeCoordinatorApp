@@ -4,11 +4,24 @@ var should = require('should');
 var app = require('../../app');
 var User = require('./user.model');
 
+var today = Date.now();
+
+
 var user = new User({
   provider: 'local',
   name: 'Fake User',
   email: 'test@test.com',
-  password: 'password'
+  password: 'password',
+  availability: {
+    unique: [
+      {
+        date: today - 1 * 24 * 60 * 60 * 1000   // one day ago, should disappear
+      },
+      {
+        date: today + 1 * 24 * 60 * 60 * 1000   // one day from now, should remain
+      }
+    ]
+  }
 });
 
 describe('User Model', function() {
@@ -46,6 +59,7 @@ describe('User Model', function() {
     user.email = '';
     user.save(function(err) {
       should.exist(err);
+      user.email = 'test@test.com';
       done();
     });
   });
@@ -57,4 +71,29 @@ describe('User Model', function() {
   it("should not authenticate user if password is invalid", function() {
     return user.authenticate('blah').should.not.be.true;
   });
+});
+
+describe('Save Hooks', function() {
+  before(function(done) {
+    User.remove().exec().then(function() {
+      done();
+    });
+  });
+
+  it('should have no users to start', function(done) {
+    User.find({}, function(err, users) {
+      users.should.have.length(0);
+      done();
+    });
+  });
+
+  it('should successfully save the user with cleaned availability', function(done) {
+    user.save(function(err, user) {
+      should.not.exist(err);
+      should.exist(user);
+      user.availability.unique.should.have.length(1);
+      done();
+    });
+  });
+
 });
