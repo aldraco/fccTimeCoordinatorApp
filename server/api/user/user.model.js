@@ -131,7 +131,7 @@ UserSchema
   // default time is last week's unique avail
 UserSchema
   .pre('save', function(next) {
-    // check for old availability in user.availability.unique, which is an array of objects
+    // check for old availability every time a user saves new data
     // filter out the dates that are older than today
     var today = Date.now();
     var avail = this.availability.unique;

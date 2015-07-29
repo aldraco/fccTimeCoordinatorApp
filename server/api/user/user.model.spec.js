@@ -89,9 +89,11 @@ describe('Save Hooks', function() {
 
   it('should successfully save the user with cleaned availability', function(done) {
     user.save(function(err, user) {
+      var today = Date.now();
       should.not.exist(err);
       should.exist(user);
       user.availability.unique.should.have.length(1);
+      user.availability.unique[0].date.should.be.above(today);
       done();
     });
   });

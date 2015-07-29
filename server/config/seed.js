@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Meeting = require('../api/meeting/meeting.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -30,6 +31,27 @@ Thing.find({}).remove(function() {
   });
 });
 
+Meeting.find({}).remove(function() {
+  Meeting.create({
+    name: 'Test meeting',
+    description: 'This is only a test meeting.',
+    location: 'In your head. In your head. Zombie.',
+    dateRangeStart: Date.now(),
+    dateRangeEnd: null,
+    confirmedMeeting: {
+      timeSet: false,
+      startTime: null,
+      endTime: null
+    },
+    admins: [],
+    invited: [],
+    attendees: [],
+    confirmed: []
+  }, function() {
+    console.log('finished populating meetings');
+  });
+});
+
 User.find({}).remove(function() {
   User.create({
     provider: 'local',
@@ -47,3 +69,4 @@ User.find({}).remove(function() {
     }
   );
 });
+
