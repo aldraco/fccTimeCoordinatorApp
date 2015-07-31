@@ -19,8 +19,9 @@ var UserSchema = new Schema({
   twitter: {},
   google: {},
   github: {},
+  timezone: String,   // String corresponds with moment.js, i.e. 'America/New York'
   contact: [{'type' : String, 'info': String}], //e.g. {type: email, info: sillywalks@ministryofwalks.uk}
-  rolodex: [{type: Schema.Types.ObjectId, ref: 'User'}],
+  rolodex: [{type: Schema.Types.ObjectId, ref: 'User'}], // rolodex is contact info for other people
   // possible future fxnality for 'teams' array?
   availability: {
     'ongoing' : [{
@@ -61,7 +62,10 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'timezone': this.timezone,
+      'contact': this.contact,
+      'availability': this.availability,
+      'meetings': this.meetings
     };
   });
 

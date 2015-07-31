@@ -93,6 +93,29 @@ exports.me = function(req, res, next) {
   });
 };
 
+exports.addAvailability = function(req, res, next) {
+  var userId = req.user._id;
+  // how will new availability be structured?
+  // assumption is that the FE will allow for adding both kinds simultaneously
+  // avail objects are in an array, assume they are all unique unless they are tagged with 'ongoing': true
+  var availability = req.availability;
+
+  User.findById(userId, function(err, user) {
+    // add new availability here
+    availability.forEach(function(obj) {
+      if (obj.ongoing) {
+        user.availability.ongoing.push(obj);
+      } else {
+        user.availability.unique.push(obj);
+      }
+    });
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      res.send(200);
+    });
+  });
+};
+
 /**
  * Authentication callback
  */

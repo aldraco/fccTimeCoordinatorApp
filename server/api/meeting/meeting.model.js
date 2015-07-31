@@ -25,16 +25,3 @@ var MeetingSchema = new Schema({
 });
 
 module.exports = mongoose.model('Meeting', MeetingSchema);
-
-// can we put cron jobs here?
-// clean out old meetings
-/*var Meeting = require('api/meeting/meeting.model.js');
-
-// look for meetings whose start dates are more than a month old
-// meeting.dateRangeStart (Date) < (a month ago) today - (30 * 24 * 60 * 60 * 1000)
-var oneMonthAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
-Meeting.find({
-  dateRangeStart: {$lt: oneMonthAgo}
-}).remove(function(err, docs) {
-  console.log(docs);
-});*/

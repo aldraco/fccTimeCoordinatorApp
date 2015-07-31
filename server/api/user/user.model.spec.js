@@ -80,6 +80,12 @@ describe('Save Hooks', function() {
     });
   });
 
+  afterEach(function(done) {
+    User.remove().exec().then(function() {
+      done();
+    });
+  });
+
   it('should have no users to start', function(done) {
     User.find({}, function(err, users) {
       users.should.have.length(0);
